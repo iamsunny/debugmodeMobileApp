@@ -1,0 +1,364 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DebugMode Reader</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	
+	<link rel="apple-touch-icon" href="images/appicon.png" type="" />
+	
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	
+	<link rel="apple-touch-startup-image" href="images/splash.png" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+	<link rel="stylesheet" href="_/css/yellow.css" />
+	<link rel="stylesheet" href="_/css/structure.css" />
+	
+	<script src="phonegap.js"></script>
+	<script src="_/js/jquery.js"></script>
+	<script src="_/js/jquery.mobile.js"></script>
+
+	<script src="_/js/myscript.js"></script>
+	<link rel="stylesheet" href="_/css/mystyles.css" />
+</head>
+<body>
+	<!-- Page: home -->
+	
+	<div id="home"
+		data-role="page"
+		data-theme="a"
+		data-title="Debugmode: Home">
+
+		<div data-role="content">
+			<img src="images/debugmode_logo.png" alt="DebugModeReader Logo" />
+		</div>
+		<div data-role="controlgroup">
+			<a href="#blog" 
+				data-role="button"
+				data-icon="vs_blog"
+			>Blog</a>
+			<a href="#videos" 
+				data-role="button"
+				data-icon="vs_video"
+			>Videos</a>			
+			<a href="#tweets" 
+				data-role="button"
+				data-icon="vs_twitter"
+			>Tweets</a>
+			<a href="#followBox" 
+				data-role="button"
+				data-icon="vs_follow"
+			>Follow</a>
+			
+		</div><!-- links -->
+	</div><!-- page -->
+
+	<!-- Page: blog -->
+	<div id="blog"
+		data-theme="a"
+		data-role="page"
+		data-title="Debugmode: Blog">
+		<div data-role="header"
+			data-theme="a"
+			data-position="fixed"
+			data-id="vs_header">
+			<h1>Blog</h1>
+			<a href="#home"
+				data-icon="home"
+				data-iconpos="notext"
+				>Home</a>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				>Info</a>
+		</div><!-- header -->
+		<div data-theme="a"
+			data-role="content"
+			id="postlist">
+		</div><!-- content -->
+		<div data-role="footer"
+			data-position="fixed"
+			data-theme="a"
+			data-id="vs_footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" 
+					data-role="button"
+					data-icon="home"
+					>Home</a></li>
+					<li><a href="#videos" 
+					data-role="button"
+					data-icon="vs_video"
+					>Videos</a></li>
+					
+					<li><a href="#tweets" 
+					data-role="button"
+					data-icon="vs_twitter"
+					>Tweets</a></li>
+					
+					<li><a href="#followBox" 
+					data-role="button"
+					data-icon="vs_follow"
+					>Follow</a></li>
+					
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- footer -->
+	</div><!-- page -->
+
+	<div id="blogpost"
+		data-role="page">
+		<div data-role="header"
+			data-position="fixed"
+			data-theme="a">
+			<a href="#blog"
+				data-icon="back"
+				data-iconpos="notext"
+				data-direction="reverse">Videos</a>
+			<h1>Post</h1>
+		</div><!-- header-->
+		<div data-role="content">
+			<div id="mypost"></div>
+		</div><!-- content -->
+	</div><!-- page -->
+
+
+	<!-- Page: Videos -->
+	<div id="videos"
+		data-role="page"
+		data-title="Debugmode: Videos">
+		<div data-role="header"
+			data-position="fixed"
+			data-id="vs_header">
+			<h1>Videos</h1>
+			<a href="#home"
+				data-icon="home"
+				data-iconpos="notext"
+				>Home</a>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				>Info</a>
+		</div><!-- header -->
+		<div data-role="content">
+
+	<div data-role="content">
+		<div class="ui-grid-a" id="videolist">
+		</div><!-- grid -->
+	</div><!-- content -->
+
+		</div><!-- content -->
+		
+		<div data-role="footer"
+			data-position="fixed"
+			data-id="vs_footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" 
+					data-role="button"
+					data-icon="home"
+					>Home</a></li>
+					<li><a href="#blog" 
+					data-role="button"
+					data-icon="vs_blog"
+					>Blog</a></li>
+					
+					<li><a href="#tweets" 
+					data-role="button"
+					data-icon="vs_twitter"
+					>Tweets</a></li>
+					
+					<li><a href="#followBox" 
+					data-role="button"
+					data-icon="vs_follow"
+					>Follow</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- footer -->
+	</div><!-- page -->
+	
+	<div id="videoplayer"
+		data-role="page">
+		<div data-role="header"
+			data-position="fixed"
+			data-theme="a">
+			<a href="#videos"
+				data-transition="fade"
+				data-icon="back"
+				data-iconpos="notext"
+				data-direction="reverse"
+				>Videos</a>
+			<h1>Videos</h1>
+		</div><!-- header -->
+		<div data-role="content">
+			<div id="myplayer"></div>
+		</div><!-- content -->
+	</div><!-- page -->
+	
+	
+	
+	<!-- Page: Tweets -->
+	<div id="tweets"
+		data-role="page"
+		data-title="Debugmode: Tweets">
+		<div data-role="header"
+			data-position="fixed"
+			data-id="vs_header">
+			<h1>Tweets</h1>
+			<a href="#home"
+				data-icon="home"
+				data-iconpos="notext"
+				>Home</a>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				>Info</a>
+		</div><!-- header -->
+		<div data-role="content"
+			id="tweetlist">
+			<a class="twitter-timeline" href="https://twitter.com/debug_mode" height="350" width="300" data-widget-id="472047325376823296">Tweets by @debug_mode</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+		</div><!-- content -->
+		<div data-role="footer"
+			data-position="fixed"
+			data-id="vs_footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" 
+					data-role="button"
+					data-icon="home"
+					>Home</a></li>
+					<li><a href="#blog" 
+					data-role="button"
+					data-icon="vs_blog"
+					>Blog</a></li>
+					<li><a href="#videos" 
+					data-role="button"
+					data-icon="vs_video"
+					>Videos</a></li>
+					<li><a href="#followBox" 
+					data-role="button"
+					data-icon="vs_follow"
+					>Follow</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- footer -->
+	</div><!-- page -->
+	
+	
+	
+	<!-- Page: blog -->
+	<div id="followBox"
+		data-theme="a"
+		data-role="page"
+		data-title="Debugmode: Follow">
+		<div data-role="header"
+			data-theme="a"
+			data-position="fixed"
+			data-id="vs_header">
+			<h1>Follow Debugmode</h1>
+			<a href="#home"
+				data-icon="home"
+				data-iconpos="notext"
+				>Home</a>
+			<a href="#info"
+				data-icon="info"
+				data-iconpos="notext"
+				data-rel="dialog"
+				>Info</a>
+		</div><!-- header -->
+		<div data-theme="a"
+			data-role="content"
+			id="followDebugMode">
+			
+			<div data-role="controlgroup">
+			<a href="http://debugmode.net/" 
+				data-role="button"
+				data-icon="vs_wp"
+			>Blog</a>
+			<a href="https://www.youtube.com/user/DebugModeVideos" 
+				data-role="button"
+				data-icon="vs_video"
+			>Youtube</a>			
+			<a href="https://twitter.com/debug_mode" 
+				data-role="button"
+				data-icon="vs_twitter"
+			>Twitter</a>
+			<a href="https://www.facebook.com/DebugMode.Net" 
+				data-role="button"
+				data-icon="vs_facebook"
+			>Facebook</a>
+			
+		</div><!-- links -->
+			
+		</div><!-- content -->
+		<div data-role="footer"
+			data-position="fixed"
+			data-theme="a"
+			data-id="vs_footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" 
+					data-role="button"
+					data-icon="home"
+					>Home</a></li>
+					<li><a href="#videos" 
+					data-role="button"
+					data-icon="vs_video"
+					>Videos</a></li>					
+					<li><a href="#tweets" 
+					data-role="button"
+					data-icon="vs_twitter"
+					>Tweets</a></li>
+					
+					<li><a href="#followBox" 
+					data-role="button"
+					data-icon="vs_follow"
+					>Follow</a></li>
+				</ul>
+			</div><!-- navbar -->
+		</div><!-- footer -->
+	</div><!-- page -->
+	
+	
+	
+	
+	<div data-role="page"
+		id="info"
+		data-theme="a"
+		>
+		<div data-role="header">
+			<h1>About DebugMode</h1>
+		</div>
+		<div data-role="content">
+			<div class="profile-image"><img src="https://pbs.twimg.com/profile_images/466600251248222208/QSHRko7O_200x200.png" alt="Dhananjay Kumar /DJ" title="Dhananjay Kumar" />	 DebugMode Reader allows to access contents from debugmode.net shared by Mr. Dhananjay Kumar @ debugmode.net -"<i>debugging the learning</i></div>
+			<p>Declaration:<hr/>
+			This is an unofficial app facilitating users the above mentioned features! <br>#tribute #respect #loveuDJ</p>
+			<a href="#"
+				data-role="button"
+				data-inline="true"
+				data-rel="back"
+				data-theme="a"
+			>cancel</a>
+			<a href="#home"
+				data-role="button"
+				data-inline="true"
+				data-theme="a"
+			>home</a>
+		</div>
+	</div>
+
+
+<script src="https://public-api.wordpress.com/rest/v1/sites/debugmode.net/posts/?pretty=1&callback=listPosts" type="text/javascript"></script>
+
+<script src="http://gdata.youtube.com/feeds/users/DebugModeVideos/uploads?alt=json-in-script&max-results=30&orderby=published&callback=listVideos" type="text/javascript"></script>
+
+
+</body>
+</html>
